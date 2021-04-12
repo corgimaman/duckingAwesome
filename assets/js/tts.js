@@ -1,18 +1,18 @@
-// let arrayFOAAS = [];
+let arrayFOAAS = [];
 
-// function getFOAAS() {
-//     var endpoint = `https://foaas.com/operations`;
+function getFOAAS() {
+    var endpoint = `https://foaas.com/operations`;
 
-//     fetch(endpoint)
-//     .then(res => res.json())
-//     .then((data) => {
-//         console.log(data)
-//         arrayFOAAS = data;
-//     })
-// }
+    fetch(endpoint)
+    .then(res => res.json())
+    .then((data) => {
+        console.log(data)
+        arrayFOAAS = data;
+    })
+}
 
-// getFOAAS();
-// console.log(arrayFOAAS);
+getFOAAS();
+console.log(arrayFOAAS);
 
 var testAudio
 
