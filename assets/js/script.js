@@ -40,14 +40,14 @@ function handleMessage(jsonTransfer) {
     // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
          let url = jsonTransfer[i].url;
-         url = url.replace(":from", from)
-         url = url.replace(":name", toName)
+         url = url.replace(":from", from);
+         url = url.replace(":name", toName);
          foArray.push(url);
      }
      
      console.log(foArray);
 
-     //shuffle the array
+     //shuffle the array and pull the first 20 and assign to btnArray
      let shuffledFoArray = foArray.sort(() => Math.random() - .5);
      btnArray = shuffledFoArray.slice(0, 20);
      console.log(btnArray);
