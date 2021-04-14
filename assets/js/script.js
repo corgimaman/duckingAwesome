@@ -3,15 +3,11 @@ var message = 'keep/'
 var from = 'everyone'
 
 
-// var foURL = `https://foaas.com/${message}${toName}/:${from}`
+var baseURL = `https://foaas.com`
 var foURL = `https://foaas.com/operations`
-let urlSplit = foURL.split('/');
-console.log(foURL);
-if (urlSplit = 'toName') {
 
-    
-}
-
+let foArray = [];
+let btnArray = [];
 
 function apiCalls() {   
     var jsonTransfer
@@ -34,31 +30,35 @@ function handleMessage(jsonTransfer) {
     jsonTransfer,
     removeValFromIndex = [0, 5, 13, 23, 32, 39, 47, 63, 65, 69, 72];
     
-
+    // using the following for loop to remove the specific values from the array
      for (var i = removeValFromIndex.length - 1; i >= 0; i--)
     jsonTransfer.splice(removeValFromIndex[i], 1);
      console.log(jsonTransfer[1]);
     
      var test = jsonTransfer[1].url
 
+    // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
          let url = jsonTransfer[i].url;
          url = url.replace(":from", from)
          url = url.replace(":name", toName)
-         console.log(url)
-         
+         foArray.push(url);
      }
-    //  test.replace(":from", from)
+     
+     console.log(foArray);
+
+     //shuffle the array
+     let shuffledFoArray = foArray.sort(() => Math.random() - .5);
+     btnArray = shuffledFoArray.slice(0, 20);
+     console.log(btnArray);
+
      
      var test2 = test.indexOf(':from')
      test[test2] = from
 
-    //  test2 = [from]
-     var URL = `https://foaas.com`
-
     function newCall() {   
         var jasonTransfer
-        fetch(URL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } })
+        fetch(baseURL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } })
         .then(response => response.json())
         .then(data => jasonTransfer = data)
         .then(() => printMessage(jasonTransfer))
