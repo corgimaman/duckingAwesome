@@ -19,18 +19,10 @@ function apiCalls() {
 
 }
 
-// function apiCalls() {   
-//     var jsonTransfer
-//     fetch(foURL, {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
-//     .then(response => response.json())
-//     .then(data => jsonTransfer = data)
-//     .then(() => handleMessage(jsonTransfer));
-// }
-
 function handleMessage(jsonTransfer) {
 
     jsonTransfer,
-    removeValFromIndex = [0, 5, 13, 23, 32, 39, 47, 63, 65, 69, 72, 89];
+    removeValFromIndex = [0, 5, 13, 20, 23, 32, 39, 47, 63, 65, 69, 72, 89];
     
     // using the following for loop to remove the specific values from the array
      for (var i = removeValFromIndex.length - 1; i >= 0; i--)
@@ -42,20 +34,26 @@ function handleMessage(jsonTransfer) {
 
     // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
+         //this is for the URLs for the api call
          let url = jsonTransfer[i].url;
          url = url.replace(":from", from);
          url = url.replace(":name", toName);
          url = baseURL + url;
          foArray.push(url);
+         //this is for the name that will display on the button
+         let foName = jsonTransfer[i].name;
+         btnArray.push(foName);
      }
-     
-     console.log(foArray);
+
+     //console.log(foArray);
 
      //pull the first 20 URLs for the API call
      apiArray = foArray.slice(0, 20);
      console.log(apiArray);
 
-     // call 
+     //pull the first 20 names for the button
+     btnArray = btnArray.slice(0, 20)
+     console.log(btnArray);
 
      function hiddenSpan(){
         for (let i = 0; i < apiArray.length; i++) {
@@ -64,11 +62,7 @@ function handleMessage(jsonTransfer) {
             .then(response => response.text())
             .then(text => console.log(text))  
         } 
-        // fetch(apiArray[0], { headers: { 'Content-Type': 'application/json', 'Accept': 'text/plain' }} )
-        // .then(response => response.text())
-        // .then(text => console.log(text))
-
-        
+    
      }
 
      hiddenSpan();
