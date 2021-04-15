@@ -7,8 +7,9 @@ var baseURL = `https://foaas.com`
 var foURL = `https://foaas.com/operations`
 
 let foArray = [];
-let btnArray = [];
 let apiArray = [];
+let btnArray = [];
+let spanArray = [];
 
 function apiCalls() {   
     var jsonTransfer
@@ -55,6 +56,7 @@ function handleMessage(jsonTransfer) {
      btnArray = btnArray.slice(0, 20)
      console.log(btnArray);
 
+
      function hiddenSpan(){
         for (let i = 0; i < apiArray.length; i++) {
             //if apiArray.length === 0 return, else run function
@@ -62,8 +64,11 @@ function handleMessage(jsonTransfer) {
             .then(response => response.text())
             .then(text => censor(text))
         } 
+
+
     
-     }
+    hiddenSpan();
+
 
      hiddenSpan();
      
@@ -241,3 +246,36 @@ function handleMessage(jsonTransfer) {
 }
                 
                 apiCalls()
+
+     //console.log(spanArray);
+
+}
+
+// this function gets the string of text that the TTS will read
+function hiddenSpan(){
+    // for loop runs through each api call and adds each response to spanArray 
+    for (let i = 0; i < apiArray.length; i++) {
+        //if apiArray.length === 0 return, else run function
+        fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
+        .then(response => response.text())
+        .then(text => spanArray.push(text))
+        //.then(makeBtn())
+    } 
+    makeBtn();
+}
+
+function makeBtn(){
+    console.log(spanArray);
+    var btnArea = document.getElementById("btnArea");
+    for (let i = 0; i < 20; i++) {
+        var btn = document.createElement("button");
+        btn.innerHTML = btnArray[i] + '<span style="display: none;">' + spanArray[i] + '</span>';
+        btn.classList.add("button", "is-large", "is-info", "is-outlined");
+        btn.setAttribute('id', 'btn' + [i]);
+        btnArea.appendChild(btn);
+    }
+}
+
+// trigger function
+apiCalls();
+
