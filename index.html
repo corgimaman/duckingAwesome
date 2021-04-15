@@ -7,12 +7,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.2/css/bulma.min.css" integrity="sha512-byErQdWdTqREz6DLAA9pCnLbdoGGhXfU6gm1c8bkf7F51JVmUBlayGe2A31VpXWQP+eiJ3ilTAZHCR3vmMyybA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="assets/style/style.css">
-    <script
-  src="https://code.jquery.com/jquery-3.6.0.min.js"
-  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-  crossorigin="anonymous"></script>
-    
-    <title>Ducking Awsome</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <title>Ducking Awesome</title>
 </head>
 <body>
     <section class="hero is-small is-info has-text-centered">
@@ -37,54 +33,31 @@
                 </div>
             </article>
         </div>
-        <div class="img">
-        <!-- <img src="https://lh3.googleusercontent.com/proxy/vZdkIebiW5y-lceWklX7cNgStmBh1fiJs_giFl6CFu0UjRoz-s4TyYSm9n1oDPY57hmuwy-AvmG2jXs6Ftow3ob4"> -->
+        <div class="field is-horizontal">
+          <div class="field has-addons mx-6">
+            <label class="label mt-2 mr-3 is-size-5">Who Are You Annoyed At?</label>
+            <div class="control">
+              <input class="input is-medium is-dark" type="text" id="otherNameInput" placeholder="Enter their name...">
+            </div>
+              <div class="control">
+                <a class="button is-info is-medium" id="otherNameBtn">
+                  Enter
+              </a>
+            </div>
         </div>
-      
-        <div class="columns">
-        <div class="column has-shadow">
-          <p></p>
-        </div>
-        
-      </div>
 
-      <!-- <section class="section">
-          <div class="container">
-              <div class="columns">
-                  <div class="column is-6">
-                    <h1 class="is-size-3-mobile title is-1 has-text-centered"> Buttons</h1>
-                      <div class="buttons">
-                        <button class="button is-large is-info is-outlined" id="btn1">one <span style="display: none;">Hidden Text</span></button>
-                        <button class="button is-large is-info is-outlined" id="btn2">Two</button>
-                        <button class="button is-large is-info is-outlined" id="btn3">Three</button>
-                        <button class="button is-large is-info is-outlined" id="btn4">Four</button>
-                        <button class="button is-large is-info is-outlined" id="btn5">Five</button>
-                        <button class="button is-large is-info is-outlined" id="btn6">Six</button>
-                        <button class="button is-large is-info is-outlined" id="btn7">Seven</button>
-                        <button class="button is-large is-info is-outlined" id="btn8">Eight</button>
-                        <button class="button is-large is-info is-outlined" id="btn9">Nine</button>
-                        <button class="button is-large is-info is-outlined" id="btn10">Ten</button>
-                      </div>
-                  </div>
-
-                  <div class="column is-6">
-                    <h1 class="is-size-3-mobile title is-1 has-text-centered"> Buttons</h1>
-                    <div class="buttons">
-                        <button class="button is-large is-info is-outlined" id="btn11">eleven</button>
-                        <button class="button is-large is-info is-outlined" id="btn12">Twelve</button>
-                        <button class="button is-large is-info is-outlined" id="btn13">Thirteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn14">Fourteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn15">Fifteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn16">Sixteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn17">Seventeen</button>
-                        <button class="button is-large is-info is-outlined" id="btn18">Eighteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn19">Nineteen</button>
-                        <button class="button is-large is-info is-outlined" id="btn20">Twenty</button>
-                      </div>
-                </div>
+          <div class="field has-addons mx-6">
+            <label class="label mt-2 mr-3 is-size-5">Your Name</label>
+              <div class="control">
+                <input class="input is-medium is-dark" type="text" id="yourNameInput" placeholder="Enter your name...">
               </div>
+            <div class="control">
+              <a class="button is-info is-medium" id="yourNameBtn">
+                Enter
+              </a>
+            </div>
           </div>
-      </section> -->
+          </div>
 
       <section class="section">
         <div class="container">
@@ -114,6 +87,7 @@
           <p>Copyright DuckingAwesome © 2021</p>
         </div>
       </footer>
+        <script defer src="assets/js/censor.js"></script>
         <script defer src="assets/js/script.js"></script>
         <script defer src="assets/js/tts.js"></script>
 </html>

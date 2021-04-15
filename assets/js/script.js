@@ -50,11 +50,11 @@ function handleMessage(jsonTransfer) {
 
      //pull the first 20 URLs for the API call
      apiArray = foArray.slice(0, 20);
-     console.log(apiArray);
+    //  console.log('Api aray $$$$',apiArray);
 
      //pull the first 20 names for the button
      btnArray = btnArray.slice(0, 20)
-     console.log(btnArray);
+    //  console.log('Button ArRAY $$$$',btnArray);
     
     hiddenSpan();
 
@@ -66,17 +66,21 @@ function handleMessage(jsonTransfer) {
 
 // this function gets the string of text that the TTS will read
 function hiddenSpan(){
+    let counter = 0
     // for loop runs through each api call and adds each response to spanArray 
     for (let i = 0; i < apiArray.length; i++) {
         //if apiArray.length === 0 return, else run function
         fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
         .then(response => response.text())
         .then(text => {
-            console.log('PUSHING into span!!!!')
-            spanArray.push(text)
+            
+            // console.log('PUSHING into span!!!!')
+            spanArray[i] = text
+            counter ++
+            // console.log('APIR ARRAY lengthhhh',  apiArray.length - 1)
            
-            if(i === apiArray.length - 1) {
-                console.log('THIS IS i!!!!', i)
+            if(counter === apiArray.length) {
+                console.log('THIS IS i!!!!', counter)
                 makeBtn()
             }
         })
@@ -86,14 +90,19 @@ function hiddenSpan(){
 }
 
 function makeBtn(){
-    console.log(spanArray);
+    console.log('Span array!!!',spanArray);
+    console.log('Btn Array %%%%%', btnArray)
     var btnArea = document.getElementById("btnArea");
+
+
     for (let i = 0; i < spanArray.length; i++) {
-        console.log('THIS SHOULD B SENTENCE', spanArray[i])
+        // console.log('THIS SHOULD B SENTENCE', spanArray[i])
+
+        console.log('BTN ARRAy i', btnArray[i])
         var btn = document.createElement("button");
-        btn.innerHTML = btnArray[i]// + '<span class="speakSpan" style="display: none;">' + spanArray[i] + '</span>';
+        btn.innerHTML = censor(btnArray[i])// + '<span class="speakSpan" style="display: none;">' + spanArray[i] + '</span>';
         btn.classList.add("button", "is-large", "is-info", "is-outlined", "speakClass");
-        btn.setAttribute('name', spanArray[i]);
+        btn.setAttribute('name', censor(spanArray[i]));
         btn.setAttribute('id', 'btn' + [i]);
         btnArea.appendChild(btn);
     }
