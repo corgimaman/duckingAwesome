@@ -82,7 +82,7 @@ function makeBtn(){
         var btn = document.createElement("button");
         btn.innerHTML = btnArray[i] + '<span style="display: none;">' + spanArray[i] + '</span>';
         btn.classList.add("button", "is-large", "is-info", "is-outlined");
-        btn.setAttribute('id', 'btn');
+        btn.setAttribute('id', 'btn' + [i]);
         btnArea.appendChild(btn);
     }
 }
