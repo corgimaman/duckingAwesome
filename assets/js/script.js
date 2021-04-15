@@ -7,8 +7,9 @@ var baseURL = `https://foaas.com`
 var foURL = `https://foaas.com/operations`
 
 let foArray = [];
-let btnArray = [];
 let apiArray = [];
+let btnArray = [];
+let spanArray = [];
 
 function apiCalls() {   
     var jsonTransfer
@@ -55,50 +56,65 @@ function handleMessage(jsonTransfer) {
      btnArray = btnArray.slice(0, 20)
      console.log(btnArray);
 
+    // this function gets the string of text that the TTS will read
      function hiddenSpan(){
+         // for loop runs through each api call and adds each response to spanArray 
         for (let i = 0; i < apiArray.length; i++) {
             //if apiArray.length === 0 return, else run function
             fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
             .then(response => response.text())
-            .then(text => console.log(text))  
+            .then(text => spanArray.push(text))
+            .then(makeBtn())
         } 
-    
-     }
 
-     hiddenSpan();
-     
+        function makeBtn(){
+            var btn = document.createElement("button");
+            var btnArea = document.getElementById("btnArea");
+            for (let i = 0; i < 20; i++) {
+                btn[i].innerHTML = btnArray[i] + '<span style="display: none;">' + spanArray[i] + '</span>';
+                btn[i].classList.add("button", "is-large", "is-info", "is-outlined");
+                btn[i].setAttribute('id', 'btn'+[i]);
+                btnArea.appendChild(btn[i]);
+            }
+
+        }
+    
+    }
+    hiddenSpan();
+
+     console.log(spanArray);
     //  var test2 = test.indexOf(':from')
     //  test[test2] = from
 
-    function newCall() {   
-        var jasonTransfer
-        fetch(baseURL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'text/plain' } })
-        .then(response => response.json())
-        .then(data => jasonTransfer = data)
-        .then(() => printMessage(jasonTransfer))
-    }
+    // function newCall() {   
+    //     var jasonTransfer
+    //     fetch(baseURL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'text/plain' } })
+    //     .then(response => response.json())
+    //     .then(data => jasonTransfer = data)
+    //     .then(() => printMessage(jasonTransfer))
+    // }
     
-    function printMessage(jasonTransfer) {
-        var subtitle = jasonTransfer.subtitle
-        var subtitlePer = subtitle.replace(":from", from)
-        console.log(`${jasonTransfer.message} ` + subtitlePer)
-        nextCall(subtitle)
+    // function printMessage(jasonTransfer) {
+    //     var subtitle = jasonTransfer.subtitle
+    //     var subtitlePer = subtitle.replace(":from", from)
+    //     console.log(`${jasonTransfer.message} ` + subtitlePer)
+    //     nextCall(subtitle)
         
-    }
+    // }
     // for (let i = 0; i < jsonTransfer.length; i++) {
         
         
-        function nextCall(subtitle){
-            var theMessage = jsonTransfer[i].subtitle.toLowerCase()
+        // function nextCall(subtitle){
+        //     var theMessage = jsonTransfer[i].subtitle.toLowerCase()
 
             
-            for (let i = 0; i < jsonTransfer.length; i++) {
-                console.log(...theMessage);
+        //     for (let i = 0; i < jsonTransfer.length; i++) {
+        //         console.log(...theMessage);
                 
                 
-            }
+        //     }
             
-        }
+        // }
     
        
 
