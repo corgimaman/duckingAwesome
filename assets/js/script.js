@@ -55,89 +55,37 @@ function handleMessage(jsonTransfer) {
      //pull the first 20 names for the button
      btnArray = btnArray.slice(0, 20)
      console.log(btnArray);
-
-    // this function gets the string of text that the TTS will read
-     function hiddenSpan(){
-         // for loop runs through each api call and adds each response to spanArray 
-        for (let i = 0; i < apiArray.length; i++) {
-            //if apiArray.length === 0 return, else run function
-            fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
-            .then(response => response.text())
-            .then(text => spanArray.push(text))
-            .then(makeBtn())
-        } 
-
-        function makeBtn(){
-            var btn = document.createElement("button");
-            var btnArea = document.getElementById("btnArea");
-            for (let i = 0; i < 20; i++) {
-                btn[i].innerHTML = btnArray[i] + '<span style="display: none;">' + spanArray[i] + '</span>';
-                btn[i].classList.add("button", "is-large", "is-info", "is-outlined");
-                btn[i].setAttribute('id', 'btn'+[i]);
-                btnArea.appendChild(btn[i]);
-            }
-
-        }
     
-    }
     hiddenSpan();
 
-     console.log(spanArray);
-    //  var test2 = test.indexOf(':from')
-    //  test[test2] = from
-
-    // function newCall() {   
-    //     var jasonTransfer
-    //     fetch(baseURL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'text/plain' } })
-    //     .then(response => response.json())
-    //     .then(data => jasonTransfer = data)
-    //     .then(() => printMessage(jasonTransfer))
-    // }
-    
-    // function printMessage(jasonTransfer) {
-    //     var subtitle = jasonTransfer.subtitle
-    //     var subtitlePer = subtitle.replace(":from", from)
-    //     console.log(`${jasonTransfer.message} ` + subtitlePer)
-    //     nextCall(subtitle)
-        
-    // }
-    // for (let i = 0; i < jsonTransfer.length; i++) {
-        
-        
-        // function nextCall(subtitle){
-        //     var theMessage = jsonTransfer[i].subtitle.toLowerCase()
-
-            
-        //     for (let i = 0; i < jsonTransfer.length; i++) {
-        //         console.log(...theMessage);
-                
-                
-        //     }
-            
-        // }
-    
-       
-
-    //     if(theMessage[i] === 'fucking') {
-    //         var blocked = theMessage.indexOf('fucking')
-    //         theMessage[blocked] = 'ducking'
-
-    //     }
-        
-//         if(theMessage[i] === 'fuck') {
-//             var blocked = theMessage.indexOf('fuck')
-//             theMessage[blocked] = 'duck'
-
-//         }
-        
-//         if(theMessage[i] === 'dickface') {
-//             var blocked = theMessage.indexOf('dickface')
-//             theMessage[blocked] = 'duckface'
-
-//         }
-//    }
-   // console.log(...theMessage);
+     //console.log(spanArray);
 
 }
 
-apiCalls()
+// this function gets the string of text that the TTS will read
+function hiddenSpan(){
+    // for loop runs through each api call and adds each response to spanArray 
+    for (let i = 0; i < apiArray.length; i++) {
+        //if apiArray.length === 0 return, else run function
+        fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
+        .then(response => response.text())
+        .then(text => spanArray.push(text))
+        //.then(makeBtn())
+    } 
+    makeBtn();
+}
+
+function makeBtn(){
+    console.log(spanArray);
+    var btnArea = document.getElementById("btnArea");
+    for (let i = 0; i < 20; i++) {
+        var btn = document.createElement("button");
+        btn.innerHTML = btnArray[i] + '<span style="display: none;">' + spanArray[i] + '</span>';
+        btn.classList.add("button", "is-large", "is-info", "is-outlined");
+        btn.setAttribute('id', 'btn');
+        btnArea.appendChild(btn);
+    }
+}
+
+// trigger function
+apiCalls();
