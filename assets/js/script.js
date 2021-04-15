@@ -3,15 +3,12 @@ var message = 'keep/'
 var from = 'everyone'
 
 
-// var foURL = `https://foaas.com/${message}${toName}/:${from}`
+var baseURL = `https://foaas.com`
 var foURL = `https://foaas.com/operations`
-let urlSplit = foURL.split('/');
-console.log(foURL);
-if (urlSplit = 'toName') {
 
-    
-}
-
+let foArray = [];
+let btnArray = [];
+let apiArray = [];
 
 function apiCalls() {   
     var jsonTransfer
@@ -19,46 +16,63 @@ function apiCalls() {
     .then(response => response.json())
     .then(data => jsonTransfer = data)
     .then(() => handleMessage(jsonTransfer));
+
 }
 
-// function apiCalls() {   
-//     var jsonTransfer
-//     fetch(foURL, {headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}})
-//     .then(response => response.json())
-//     .then(data => jsonTransfer = data)
-//     .then(() => handleMessage(jsonTransfer));
-// }
-
 function handleMessage(jsonTransfer) {
-    
-    jsonTransfer,
-    removeValFromIndex = [0, 5, 13, 23, 32, 39, 47, 63, 65, 69, 72];
-    
 
+    jsonTransfer,
+    removeValFromIndex = [0, 5, 13, 20, 23, 32, 39, 47, 63, 65, 69, 72, 89];
+    
+    // using the following for loop to remove the specific values from the array
      for (var i = removeValFromIndex.length - 1; i >= 0; i--)
     jsonTransfer.splice(removeValFromIndex[i], 1);
-     console.log(jsonTransfer[1]);
+    // shuffle the json
+    jsonTransfer.sort(() => Math.random() - .5);
+    //console.log(jsonTransfer)
     
-     var test = jsonTransfer[1].url
 
+    // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
+         //this is for the URLs for the api call
          let url = jsonTransfer[i].url;
-         url = url.replace(":from", from)
-         url = url.replace(":name", toName)
-         console.log(url)
-         
+         url = url.replace(":from", from);
+         url = url.replace(":name", toName);
+         url = baseURL + url;
+         foArray.push(url);
+         //this is for the name that will display on the button
+         let foName = jsonTransfer[i].name;
+         btnArray.push(foName);
      }
-    //  test.replace(":from", from)
-     
-     var test2 = test.indexOf(':from')
-     test[test2] = from
 
-    //  test2 = [from]
-     var URL = `https://foaas.com`
+     //console.log(foArray);
+
+     //pull the first 20 URLs for the API call
+     apiArray = foArray.slice(0, 20);
+     console.log(apiArray);
+
+     //pull the first 20 names for the button
+     btnArray = btnArray.slice(0, 20)
+     console.log(btnArray);
+
+     function hiddenSpan(){
+        for (let i = 0; i < apiArray.length; i++) {
+            //if apiArray.length === 0 return, else run function
+            fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
+            .then(response => response.text())
+            .then(text => console.log(text))  
+        } 
+    
+     }
+
+     hiddenSpan();
+     
+    //  var test2 = test.indexOf(':from')
+    //  test[test2] = from
 
     function newCall() {   
         var jasonTransfer
-        fetch(URL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' } })
+        fetch(baseURL + test, { headers: { 'Content-Type': 'application/json', 'Accept': 'text/plain' } })
         .then(response => response.json())
         .then(data => jasonTransfer = data)
         .then(() => printMessage(jasonTransfer))
