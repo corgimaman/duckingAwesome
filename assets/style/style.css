@@ -1,7 +1,6 @@
 body{
     background-color: rgb(201, 231, 229);
 }
-.img{
-    float: center;
-    margin: auto 25px;
+.has-bg-img {
+    background: https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500;
 }
