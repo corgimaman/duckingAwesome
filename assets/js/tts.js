@@ -1,18 +1,4 @@
-let arrayFOAAS = [];
 
-function getFOAAS() {
-    var endpoint = `https://foaas.com/operations`;
-
-    fetch(endpoint)
-    .then(res => res.json())
-    .then((data) => {
-        console.log(data)
-        arrayFOAAS = data;
-    })
-}
-
-getFOAAS();
-console.log(arrayFOAAS);
 
 var testAudio
 
@@ -65,11 +51,13 @@ var testAudio
 
       
 var button  = document.getElementById('sound')
+var buttonSpan = document.getElementsByClassName('speakSpan')
+var audioPlayingArray = []
 
-button.addEventListener('click', function(e) {
+$(document).on('click', '.speakClass', function(e) {
     console.log('We got cl9cked!!', e.target.textContent)
 
-    var endpoint = `http://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=` + e.target.textContent
+    var endpoint = `http://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=` + $(this).attr('name')
 
     fetchAudio(endpoint)
     .then((response) => {
@@ -78,6 +66,15 @@ button.addEventListener('click', function(e) {
         var url = window.URL.createObjectURL(blob)
         testAudio = new Audio(url);
         testAudio.play()
+        audioPlayingArray.push(testAudio)
     })
 
+})
+
+$('#stop').on('click', function(){
+  for (let i = 0; i < audioPlayingArray.length; i++) {
+    audioPlayingArray[i].pause();
+    
+  }
+  
 })
