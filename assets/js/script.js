@@ -19,6 +19,11 @@ $("#nameBtn").on("click", function(){
     apiCalls();
 })
 
+$("#reset").on("click", function(){
+    localStorage.clear()
+    location.reload()
+})
+
 
 function apiCalls() {   
     var jsonTransfer
