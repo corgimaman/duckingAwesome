@@ -74,13 +74,10 @@ function hiddenSpan(){
         .then(response => response.text())
         .then(text => {
             
-            // console.log('PUSHING into span!!!!')
             spanArray[i] = text
             counter ++
-            // console.log('APIR ARRAY lengthhhh',  apiArray.length - 1)
            
             if(counter === apiArray.length) {
-                console.log('THIS IS i!!!!', counter)
                 makeBtn()
             }
         })
@@ -90,15 +87,12 @@ function hiddenSpan(){
 }
 
 function makeBtn(){
-    console.log('Span array!!!',spanArray);
-    console.log('Btn Array %%%%%', btnArray)
+
     var btnArea = document.getElementById("btnArea");
 
 
     for (let i = 0; i < spanArray.length; i++) {
-        // console.log('THIS SHOULD B SENTENCE', spanArray[i])
 
-        console.log('BTN ARRAy i', btnArray[i])
         var btn = document.createElement("button");
         btn.innerHTML = censor(btnArray[i])// + '<span class="speakSpan" style="display: none;">' + spanArray[i] + '</span>';
         btn.classList.add("button", "is-large", "is-info", "is-outlined", "speakClass");
