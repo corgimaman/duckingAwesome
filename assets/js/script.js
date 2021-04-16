@@ -15,6 +15,7 @@ $("#nameBtn").on("click", function(){
     from = $("#fromName").val().trim()
     localStorage.setItem("toName", toName)
     localStorage.setItem("fromName", from)
+    $("#btnArea").html(" ")
     apiCalls();
 })
 
@@ -101,5 +102,15 @@ function makeBtn(){
     }
 }
 
-// trigger function
 
+function duck(){
+
+    var oldTo = localStorage.getItem("toName")
+    $("#toName").val(oldTo)
+    var oldFrom = localStorage.getItem("fromName")
+    $("#fromName").val(oldFrom)
+    
+
+}
+// trigger function
+duck()
