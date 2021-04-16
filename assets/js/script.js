@@ -1,5 +1,5 @@
-var toName = 'Bob'
-var from = 'everyone'
+var toName  
+var from 
 
 
 var baseURL = `https://foaas.com`
