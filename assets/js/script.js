@@ -1,3 +1,15 @@
+// modal
+var modalBackground = document.querySelector(".modal-background");
+var modal = document.querySelector(".modal");
+var modalBtn = document.getElementById("modalBtn");
+
+modalBtn.addEventListener("click", () => {
+    modal.classList.remove("is-active");
+})
+modalBackground.addEventListener("click", () => {
+    modal.classList.remove("is-active");
+})
+
 var toName  
 var from 
 
@@ -100,7 +112,7 @@ function makeBtn(){
         var btn = document.createElement("button");
 
         btn.innerHTML = censor(btnArray[i]);
-        btn.classList.add("button", "is-large", "is-info", "is-outlined", "speakClass");
+        btn.classList.add("button", "is-large", "is-info", "speakClass");
         btn.setAttribute('name', censor(spanArray[i]));
         btn.setAttribute('id', 'btn' + [i]);
         btnArea.appendChild(btn);
