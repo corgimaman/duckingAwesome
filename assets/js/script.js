@@ -1,5 +1,5 @@
-var toName = 'Bob'
-var from = 'everyone'
+var toName  
+var from 
 
 
 var baseURL = `https://foaas.com`
@@ -9,6 +9,21 @@ let foArray = [];
 let apiArray = [];
 let btnArray = [];
 let spanArray = [];
+
+$("#nameBtn").on("click", function(){
+    toName = $("#toName").val().trim()
+    from = $("#fromName").val().trim()
+    localStorage.setItem("toName", toName)
+    localStorage.setItem("fromName", from)
+    $("#btnArea").html(" ")
+    apiCalls();
+})
+
+$("#reset").on("click", function(){
+    localStorage.clear()
+    location.reload()
+})
+
 
 function apiCalls() {   
     var jsonTransfer
@@ -92,5 +107,15 @@ function makeBtn(){
     }
 }
 
+
+function duck(){
+
+    var oldTo = localStorage.getItem("toName")
+    $("#toName").val(oldTo)
+    var oldFrom = localStorage.getItem("fromName")
+    $("#fromName").val(oldFrom)
+    
+
+}
 // trigger function
-apiCalls();
+duck()
