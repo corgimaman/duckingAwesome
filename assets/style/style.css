@@ -1,6 +1,19 @@
 body{
-    background-color: rgb(201, 231, 229);
+    /* height: 200; */
+    background-image: url("https://images.pexels.com/photos/5723324/pexels-photo-5723324.jpeg");
+    /* background-color: rgb(201, 231, 229); */
+    background-size: 100% 100%;
 }
 .has-bg-img {
-    background: https://images.pexels.com/photos/1037992/pexels-photo-1037992.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500;
+    background-image: url("https://images.pexels.com/photos/1040499/pexels-photo-1040499.jpeg");
+    background-size: 510px 420px;
+}
+.modal-card-head{
+    border-bottom: 1px solid black;
+}
+.modal-card{
+    border: 1px solid black;
+}
+.modal-card-foot{
+    border-top: 1px solid black;
 }
