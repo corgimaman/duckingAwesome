@@ -10,6 +10,9 @@ let apiArray = [];
 let btnArray = [];
 let spanArray = [];
 
+
+
+
 function apiCalls() {   
     var jsonTransfer
     fetch(foURL)
