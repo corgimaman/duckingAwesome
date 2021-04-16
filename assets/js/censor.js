@@ -8,134 +8,143 @@ function censor(text) {
         fuck: 'fuck',
         fucking: 'fucking'
     }
-        for (let i = 0; i < textCensored.length; i++) {
-           // textCensored[i] = textCensored[i].toLowerCase()
-        
-        //     if (textCensored[i] == Object.keys(badWords)[i]) {
-        //     let blocked = Object.keys(badWords)[i]
-        //     textCensored[blocked] = blocked 
-            
+    for (let i = 0; i < textCensored.length; i++) {
+        // textCensored[i] = textCensored[i].toLowerCase()
+        // if (textCensored[i] == Object.keys(badWords)[i]) {
+        // let blocked = Object.keys(badWords)[i]
+        // textCensored[blocked] = blocked 
         // }
-
-        if(textCensored[i] === 'fucking') {
+        if (textCensored[i] === 'fucking') {
             let blocked = textCensored.indexOf('fucking')
             textCensored[blocked] = 'ducking'
         }
-        
-        if(textCensored[i] === 'Fucking') {
+        if (textCensored[i] === 'Fucking') {
             let blocked = textCensored.indexOf('Fucking')
             textCensored[blocked] = 'Ducking'
         }
-        
-        if(textCensored[i] === 'fuck') {
+        if (textCensored[i] === 'fuck') {
             let blocked = textCensored.indexOf('fuck')
-            textCensored[blocked] = 'duck'   
+            textCensored[blocked] = 'duck'
         }
-        
-        if(textCensored[i] === 'fuck-nugget') {
+        if (textCensored[i] === 'bitch!') {
+            let blocked = textCensored.indexOf('bitch!')
+            textCensored[blocked] = 'fool!'
+        }
+        if (textCensored[i] === 'fuck-nugget') {
             let blocked = textCensored.indexOf('fuck-nugget')
-            textCensored[blocked] = 'duck-nugget'   
+            textCensored[blocked] = 'duck-nugget'
         }
-        
-        if(textCensored[i] === 'fuck-nugget.') {
+        if (textCensored[i] === 'fuck-nugget.') {
             let blocked = textCensored.indexOf('fuck-nugget.')
-            textCensored[blocked] = 'duck-nugget.'   
+            textCensored[blocked] = 'duck-nugget.'
         }
-        
-        if(textCensored[i] === 'fuck?') {
+        if (textCensored[i] === 'fuck?') {
             let blocked = textCensored.indexOf('fuck?')
-            textCensored[blocked] = 'duck?'   
+            textCensored[blocked] = 'duck?'
         }
-       
-        if(textCensored[i] === 'Fuck') {
+        if (textCensored[i] === 'fuck.') {
+            let blocked = textCensored.indexOf('fuck.')
+            textCensored[blocked] = 'duck.'
+        }
+        if (textCensored[i] === 'Asshole') {
+            let blocked = textCensored.indexOf('Asshole')
+            textCensored[blocked] = 'Butthole'
+        }
+        if (textCensored[i] === 'Fuck') {
             let blocked = textCensored.indexOf('Fuck')
             textCensored[blocked] = 'Duck'
         }
-
-        if(textCensored[i] === 'FUCK') {
+        if (textCensored[i] === 'FUCK') {
             let blocked = textCensored.indexOf('FUCK')
             textCensored[blocked] = 'DUCK'
         }
-
-        if(textCensored[i] === "Fuck's") {
+        if (textCensored[i] === "Fuck's") {
             let blocked = textCensored.indexOf("Fuck's")
             textCensored[blocked] = "Duck's"
         }
-        
-        if(textCensored[i] === 'fucks') {
+        if (textCensored[i] === "'Fuck") {
+            let blocked = textCensored.indexOf("'Fuck")
+            textCensored[blocked] = "'Duck"
+        }
+        if (textCensored[i] === 'fucks') {
             let blocked = textCensored.indexOf('fucks')
             textCensored[blocked] = 'ducks'
         }
-        
-        if(textCensored[i] === 'fucks.') {
+        if (textCensored[i] === 'fucks.') {
             let blocked = textCensored.indexOf('fucks.')
             textCensored[blocked] = 'ducks.'
         }
-        
-        if(textCensored[i] === 'motherfucker!') {
+        if (textCensored[i] === 'motherfucker!') {
             let blocked = textCensored.indexOf('motherfucker!')
             textCensored[blocked] = 'motherducker!'
         }
-        
-        if(textCensored[i] === 'hide-and-go-fuck-yourself') {
+        if (textCensored[i] === 'motherfuck!') {
+            let blocked = textCensored.indexOf('motherfuck!')
+            textCensored[blocked] = 'motherduck!'
+        }
+        if (textCensored[i] === 'motherfuck') {
+            let blocked = textCensored.indexOf('motherfuck')
+            textCensored[blocked] = 'motherduck'
+        }
+        if (textCensored[i] === 'hide-and-go-fuck-yourself') {
             let blocked = textCensored.indexOf('hide-and-go-fuck-yourself')
             textCensored[blocked] = 'hide-and-go-duck-yourself'
         }
-        
-        if(textCensored[i] === "fuckin'") {
+        if (textCensored[i] === "fuckin'") {
             let blocked = textCensored.indexOf("fuckin'")
             textCensored[blocked] = "duckin'"
         }
-        
-        if(textCensored[i] === 'dickface') {
+        if (textCensored[i] === "Fuckity'") {
+            let blocked = textCensored.indexOf("Fuckity'")
+            textCensored[blocked] = "Fuckity'"
+        }
+        if (textCensored[i] === 'dickface') {
             let blocked = textCensored.indexOf('dickface')
             textCensored[blocked] = 'duckface'
         }
-
-        if(textCensored[i] === 'bullshit') {
+        if (textCensored[i] === 'bullshit') {
             let blocked = textCensored.indexOf('bullshit')
             textCensored[blocked] = 'duckpoo'
         }
-        
-        if(textCensored[i] === 'asshole') {
+        if (textCensored[i] === 'asshole') {
             let blocked = textCensored.indexOf('asshole')
             textCensored[blocked] = 'turd'
         }
-        
-        if(textCensored[i] === 'cocks') {
+        if (textCensored[i] === 'asshole.') {
+            let blocked = textCensored.indexOf('asshole.')
+            textCensored[blocked] = 'turd.'
+        }
+        if (textCensored[i] === 'asshole...') {
+            let blocked = textCensored.indexOf('asshole...')
+            textCensored[blocked] = 'turd...'
+        }
+        if (textCensored[i] === 'cocks') {
             let blocked = textCensored.indexOf('cocks')
             textCensored[blocked] = 'jellybeans'
         }
-        
-        if(textCensored[i] === 'cocks.') {
+        if (textCensored[i] === 'cocks.') {
             let blocked = textCensored.indexOf('cocks.')
             textCensored[blocked] = 'jellybeans.'
         }
-
-        if(textCensored[i] === 'shit,') {
+        if (textCensored[i] === 'shit,') {
             let blocked = textCensored.indexOf('shit,')
-            textCensored[blocked] = 'poo,'
+            textCensored[blocked] = 'poop,'
         }
-        
-        if(textCensored[i] === 'shit!') {
+        if (textCensored[i] === 'shit!') {
             let blocked = textCensored.indexOf('shit!')
-            textCensored[blocked] = 'poo!'
+            textCensored[blocked] = 'poop!'
         }
-
-        if(textCensored[i] === 'cocksplat') {
+        if (textCensored[i] === 'cocksplat') {
             let blocked = textCensored.indexOf('cocksplat')
             textCensored[blocked] = 'paintsplat'
         }
-        
-        if(textCensored[i] === 'dicks.') {
+        if (textCensored[i] === 'dicks.') {
             let blocked = textCensored.indexOf('dicks.')
             textCensored[blocked] = 'jellybeans.'
         }
     }
-        
-        
+
     //console.log('CENSOR TEST!!',textCensored.join(' '));
     return textCensored.join(' ')
-    
 }
 
