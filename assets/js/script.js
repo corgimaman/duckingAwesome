@@ -29,7 +29,7 @@ function handleMessage(jsonTransfer) {
     jsonTransfer.splice(removeValFromIndex[i], 1);
     // shuffle the json
     jsonTransfer.sort(() => Math.random() - .5);
-    
+
 
     // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
@@ -51,7 +51,6 @@ function handleMessage(jsonTransfer) {
      btnArray = btnArray.slice(0, 20)
     
     hiddenSpan();
-
 }
 
 
@@ -61,7 +60,6 @@ function hiddenSpan(){
     let counter = 0
     // for loop runs through each api call and adds each response to spanArray 
     for (let i = 0; i < apiArray.length; i++) {
-        //if apiArray.length === 0 return, else run function
         fetch(apiArray[i], { headers: {  'Content-Type': 'application/json', 'Accept': 'text/plain' } })
         .then(response => response.text())
         .then(text => {
@@ -85,7 +83,8 @@ function makeBtn(){
     for (let i = 0; i < spanArray.length; i++) {
 
         var btn = document.createElement("button");
-        btn.innerHTML = censor(btnArray[i])
+
+        btn.innerHTML = censor(btnArray[i]);
         btn.classList.add("button", "is-large", "is-info", "is-outlined", "speakClass");
         btn.setAttribute('name', censor(spanArray[i]));
         btn.setAttribute('id', 'btn' + [i]);
