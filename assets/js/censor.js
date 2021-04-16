@@ -1,7 +1,5 @@
 function censor(text) {
-    console.log('TEXT TO BE CENSORCED!!!', text)
     var textCensored = text.split(' ')
-    // console.log(textCensored);
 
 
     var badWords = {

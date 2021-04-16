@@ -1,15 +1,4 @@
-
-
 var testAudio
-
-// var endpoint = `http://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=Hello,%20world!`
-
-// fetch(endpoint)
-//     .then((res) => (res.text()))
-    
-//     .then((data) => {
-//         console.log(data)
-//     })
 
     function fetchAudio(url) {
 
@@ -32,21 +21,6 @@ var testAudio
           })
       }
 
-    
-    //   fetchAudio()
-    //     .then((response) => {
-    //         // response.value for fetch streams is a Uint8Array
-    //         var blob = new Blob([response.value], { type: 'audio/mp3' });
-    //         var url = window.URL.createObjectURL(blob)
-    //         testAudio = new Audio(url);
-    //         // window.audio.src = url;
-    //         // window.audio.play();
-    //     })
-    //     .catch((error) => {
-    //         this.setState({
-    //             error: error.message
-    //         });
-    //     });
 
 
       
@@ -55,7 +29,6 @@ var buttonSpan = document.getElementsByClassName('speakSpan')
 var audioPlayingArray = []
 
 $(document).on('click', '.speakClass', function(e) {
-    console.log('We got cl9cked!!', e.target.textContent)
 
     var endpoint = `http://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=` + $(this).attr('name')
 

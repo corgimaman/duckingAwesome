@@ -1,5 +1,4 @@
 var toName = 'Bob'
-var message = 'keep/'
 var from = 'everyone'
 
 
@@ -30,7 +29,6 @@ function handleMessage(jsonTransfer) {
     jsonTransfer.splice(removeValFromIndex[i], 1);
     // shuffle the json
     jsonTransfer.sort(() => Math.random() - .5);
-    //console.log(jsonTransfer)
     
 
     // taking the entire array and replacing the api queries
@@ -46,19 +44,13 @@ function handleMessage(jsonTransfer) {
          btnArray.push(foName);
      }
 
-     //console.log(foArray);
-
      //pull the first 20 URLs for the API call
      apiArray = foArray.slice(0, 20);
-    //  console.log('Api aray $$$$',apiArray);
 
      //pull the first 20 names for the button
      btnArray = btnArray.slice(0, 20)
-    //  console.log('Button ArRAY $$$$',btnArray);
     
     hiddenSpan();
-
-     //console.log(spanArray);
 
 }
 
@@ -81,7 +73,6 @@ function hiddenSpan(){
                 makeBtn()
             }
         })
-        //.then(makeBtn())
     } 
     
 }
@@ -94,7 +85,7 @@ function makeBtn(){
     for (let i = 0; i < spanArray.length; i++) {
 
         var btn = document.createElement("button");
-        btn.innerHTML = censor(btnArray[i])// + '<span class="speakSpan" style="display: none;">' + spanArray[i] + '</span>';
+        btn.innerHTML = censor(btnArray[i])
         btn.classList.add("button", "is-large", "is-info", "is-outlined", "speakClass");
         btn.setAttribute('name', censor(spanArray[i]));
         btn.setAttribute('id', 'btn' + [i]);
