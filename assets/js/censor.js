@@ -144,10 +144,7 @@ function censor(text) {
         }
     }
 
-        
-        
     //console.log('CENSOR TEST!!',textCensored.join(' '));
     return textCensored.join(' ')
-    
 }
 
