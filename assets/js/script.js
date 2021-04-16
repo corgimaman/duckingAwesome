@@ -10,7 +10,12 @@ let apiArray = [];
 let btnArray = [];
 let spanArray = [];
 
-
+$("#nameBtn").on("click", function(){
+    toName = $("#toName").val().trim()
+    from = $("#fromName").val().trim()
+    localStorage.setItem("toName", toName)
+    localStorage.setItem("fromName", from)
+})
 
 
 function apiCalls() {   
