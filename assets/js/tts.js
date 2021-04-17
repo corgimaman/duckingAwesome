@@ -4,7 +4,6 @@ var testAudio
 
         return fetch(url)
           .then(res => {
-              console.log('RAW RES!!!', res)
             if (!res.ok)
               throw new Error(`${res.status} = ${res.statusText}`);
             // response.body is a readable stream.
@@ -47,7 +46,6 @@ $(document).on('click', '.speakClass', function(e) {
 $('#stop').on('click', function(){
   for (let i = 0; i < audioPlayingArray.length; i++) {
     audioPlayingArray[i].pause();
-    
   }
   
 })
