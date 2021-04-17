@@ -8,13 +8,11 @@ modalBtn.addEventListener("click", () => {
     modal.classList.remove("is-active");
 })
 
-/*modalBackground.addEventListener("click", () => {
-    modal.classList.remove("is-active");
-})*/
-
 okButton.addEventListener("click", () => {
     modal.classList.remove("is-active");
 })
+
+// api
 
 var toName  
 var from 
@@ -29,6 +27,7 @@ let btnArray = [];
 let spanArray = [];
 
 $("#nameBtn").on("click", function(){
+    localStorage.clear();
     toName = $("#toName").val().trim()
     from = $("#fromName").val().trim()
     localStorage.setItem("toName", toName)
@@ -40,6 +39,10 @@ $("#nameBtn").on("click", function(){
 $("#reset").on("click", function(){
     localStorage.clear()
     location.reload()
+})
+
+$("#deleteMessage").on("click", function(){
+    $("#message").hide();
 })
 
 
@@ -125,7 +128,7 @@ function makeBtn(){
     }
 }
 
-
+// function duck checks local storage for any saved items and brings them onto the page
 function duck(){
 
     var oldTo = localStorage.getItem("toName")
@@ -135,5 +138,5 @@ function duck(){
     
 
 }
-// trigger function
-duck()
+// trigger function upon page load
+duck();
