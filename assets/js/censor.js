@@ -1,7 +1,10 @@
 function censor(text) {
 
-    const regexFUCK = /Fuck/i;
-    text = text.replace(regexFUCK, 'Duck')
+    const regexFuck = /Fuck/i;
+    text = text.replace(regexFuck, 'Duck')
+    
+    const regexfuck = /fuck/i;
+    text = text.replace(regexfuck, 'duck')
     
     const regexAss = /Ass/i;
     text = text.replace(regexAss, 'butt')
