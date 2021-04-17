@@ -2,11 +2,17 @@
 var modalBackground = document.querySelector(".modal-background");
 var modal = document.querySelector(".modal");
 var modalBtn = document.getElementById("modalBtn");
+var okButton = document.getElementById("okayBtn");
 
 modalBtn.addEventListener("click", () => {
     modal.classList.remove("is-active");
 })
-modalBackground.addEventListener("click", () => {
+
+/*modalBackground.addEventListener("click", () => {
+    modal.classList.remove("is-active");
+})*/
+
+okButton.addEventListener("click", () => {
     modal.classList.remove("is-active");
 })
 
