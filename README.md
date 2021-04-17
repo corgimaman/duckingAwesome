@@ -29,3 +29,18 @@ Upon first accessing the website you get a warning modal that can be dismissed u
 Once the API calls are complete, press whichever button you want read out loud by the talk to speech! You can press as many buttons as you want, as often as you want. All swear words should be filtered out for profanity. Press the stop button to stop the audio. Twenty random buttons are generated each time, so refresh the page to get twenty new ones. Pressing reset will clear out the local storage (delete the names from the input boxes) and refresh the page.
 
 [Come play with it here!](https://corgimaman.github.io/groupProject/)
+
+### Future Developments
+- Let user choose language
+- Let user choose voice of person speaking (API has choices!)
+
+
+[Powerpoint Presentation](https://docs.google.com/presentation/d/1-ty8rQG_ONTYsHnaQ4QCeY7RarS1kNIU0pFJT_Mak98/edit?usp=sharing)
+
+### Team
+Letter | Name
+------------ | -------------
+E | Erick Flores
+I | Ida Shalilian
+J | Jesse Ceniceros
+K | Kevin Henley
