@@ -11,3 +11,13 @@ I WANT to be able to tell off my supervisor or my annoying co-worker, without ac
 SO THAT we can avoid an engagement between a supervisor and an employee where they are involved in a knowledge transfer about an impending vocational paradigm shift...or in other words get fired
 ```
 
+## Acceptance Criteria
+```
+GIVEN I am a stressed user at work
+WHEN I need a way to blow off steam
+THEN I go to a censored soundboard
+WHEN I enter names into the input text
+THEN the buttons will appear
+WHEN I click on a button
+THEN someone else reads out my frustration
+```
