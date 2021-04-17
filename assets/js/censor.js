@@ -3,9 +3,6 @@ function censor(text) {
     const regexFuck = /Fuck/gi;
     text = text.replace(regexFuck, 'Duck')
     
-    const regexfuck = /fuck/gi;
-    text = text.replace(regexfuck, 'duck')
-    
     const regexAss = /Ass/gi;
     text = text.replace(regexAss, 'butt')
     
