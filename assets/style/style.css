@@ -10,10 +10,12 @@ body{
 }
 .modal-card-head{
     border-bottom: 1px solid black;
+    background-color: rgb(240, 240, 18);
 }
 .modal-card{
     border: 1px solid black;
 }
 .modal-card-foot{
     border-top: 1px solid black;
+    background-color: rgb(240, 240, 18);
 }
