@@ -11,13 +11,13 @@
     <title>Ducking Awesome</title>
 </head>
 <body>
-    <section class="hero is-small is-info has-text-centered">
+    <section class="hero is-small is-info has-text-centered has-bg-img">
         <div class="hero-body">
           <p class="title is-2">
             Ducking Awesome 💩 <i class="fa fa-bullhorn"></i>
           </p>
           <p class="subtitle is-3">
-            soundboard
+            soundboard <i class="fa fa-play-circle"></i>
           </p>
         </div>
       </section>
@@ -33,40 +33,52 @@
                 </div>
             </article>
         </div>
-        <div class="field is-horizontal">
-          <div class="field has-addons mx-6">
-            <label class="label mt-2 mr-3 is-size-5">Who Are You Annoyed At?</label>
-            <div class="control">
-              <input class="input is-medium is-dark" type="text" id="toName" placeholder="Enter their name...">
-            </div>
-              
 
-          </div>
-
-          <div class="field has-addons mx-6">
-            <label class="label mt-2 mr-3 is-size-5">Your Name</label>
-              <div class="control">
-                <input class="input is-medium is-dark" type="text" id="fromName" placeholder="Enter your name...">
+                  <!-- field for input names -->
+          <div class="field is-horizontal">
+            <div class="field has-addons mx-6">
+              <label class="label mt-2 mr-3 is-size-6-mobile is-size-5 has-text-white">Who Are You Annoyed At?</label>
+                <div class="control">
+                  <input class="input is-medium is-dark" type="text" id="toName" placeholder="Enter their name...">
+                </div>
               </div>
- 
-          </div>
-          </div>
+            <div class="field has-addons mx-6">
+              <label class="label mt-2 mr-3 is-size-6-mobile is-size-5 has-text-white">Your Name</label>
+                <div class="control">
+                  <input class="input is-medium is-dark" type="text" id="fromName" placeholder="Enter your name...">
+                </div>
               </div>
-            <div class="control">
-              <a class="button is-info is-medium" id="nameBtn">
-                Enter
-              </a>
             </div>
           </div>
-          </div>
 
-      <section class="section">
-        <div class="container">
-          <div class="buttons" id="btnArea">
+              <div class="section">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-12 has-text-centered">
+                          <div class="button is-grouped">
 
-          </div>
+                                <a class="button is-info is-large ml-1" id="nameBtn">Enter</a>
+                            
+                                <a class="button is-large is-danger" id="reset">Reset</a>
+
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+
+            </div>
         </div>
-      </section>
+
+              <!-- grouped buttons -->
+        <section class="section">
+          <div class="container">
+              <div class="buttons" id="btnArea">
+              </div>
+          </div>
+        </section>
+
+              <!-- stop button -->
       <div class="section">
           <div class="container">
               <div class="columns">
@@ -77,19 +89,11 @@
           </div>
 
       </div>
-      <div class="section">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-12 has-text-centered">
-                  <button class="button is-large is-danger" id="reset">Reset</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
 
     </body>
-    <footer class="footer">
+
+            <!-- footer -->
+      <footer class="footer">
         <div class="content has-text-centered">
           <p>
             Created by <a href="#">JIKE Inc</a>. Please like and follow on <a href="#">Facebook</a> & <a href="#">Instagram</a>. Contact Us at 
@@ -98,6 +102,32 @@
           <p>Copyright DuckingAwesome © 2021</p>
         </div>
       </footer>
+            <!-- modal -->
+            <div class="modal is-active">
+              <div class="modal-background"></div>
+                <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title has-text-centered">Warning welcome.</p>
+                </header>
+                <button class="modal-close is-large" id="modalBtn" arial-label="close"></button>
+                  <!-- <div class="modal-content has-background-white py-4 px-4 has-text-centered"> -->
+                <!-- </div> -->
+                <section class="modal-content has-background-white">
+                  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam, incidunt.
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam,
+                    Lorem ipsum dolor sit amet. necessitatibus!
+                  </p>
+                </section>
+                  <footer class="modal-card-foot">
+                    <div class="buttons has-text-centered">
+                      <button class="button is-success">Yes!</button>
+                      <button class="button is-danger">No!</button>
+                    </div>
+                  </footer>
+                </div>
+              </div>
+            </div>
+
         <script defer src="assets/js/censor.js"></script>
         <script defer src="assets/js/script.js"></script>
         <script defer src="assets/js/tts.js"></script>
