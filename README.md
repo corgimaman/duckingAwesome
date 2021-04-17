@@ -36,3 +36,11 @@ Once the API calls are complete, press whichever button you want read out loud b
 
 
 [Powerpoint Presentation](https://docs.google.com/presentation/d/1-ty8rQG_ONTYsHnaQ4QCeY7RarS1kNIU0pFJT_Mak98/edit?usp=sharing)
+
+### Team
+Letter | Name
+------------ | -------------
+E | Erick Flores
+I | Ida Shalilian
+J | Jesse Ceniceros
+K | Kevin Henley
