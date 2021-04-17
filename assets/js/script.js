@@ -58,15 +58,16 @@ function apiCalls() {
 function handleMessage(jsonTransfer) {
 
     jsonTransfer,
-    removeValFromIndex = [0, 5, 13, 20, 23, 32, 39, 47, 63, 65, 69, 72, 89];
+    removeValFromIndex = [0, 5, 13, 20, 23, 32, 39, 45, 47, 63, 65, 69, 72, 89];
     
     // using the following for loop to remove the specific values from the array
-     for (var i = removeValFromIndex.length - 1; i >= 0; i--)
+    for (var i = removeValFromIndex.length - 1; i >= 0; i--)
     jsonTransfer.splice(removeValFromIndex[i], 1);
     // shuffle the json
     jsonTransfer.sort(() => Math.random() - .5);
-
-
+    
+    console.log(jsonTransfer);
+    
     // taking the entire array and replacing the api queries
      for (let i = 0; i < jsonTransfer.length; i++) {
          //this is for the URLs for the api call
