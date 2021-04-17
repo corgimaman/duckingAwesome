@@ -62,7 +62,7 @@ function handleMessage(jsonTransfer) {
      for (let i = 0; i < jsonTransfer.length; i++) {
          //this is for the URLs for the api call
          let url = jsonTransfer[i].url;
-         url = url.replace(":from", from);
+         url = url.replace(":from", "from " + from);
          url = url.replace(":name", toName);
          url = baseURL + url;
          foArray.push(url);

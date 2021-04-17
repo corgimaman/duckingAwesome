@@ -4,6 +4,7 @@ body{
     /* background-color: rgb(201, 231, 229); */
     background-size: 100% 100%;
 }
+
 .has-bg-img {
     background-image: url("https://images.pexels.com/photos/1040499/pexels-photo-1040499.jpeg");
     background-size: 510px 420px;
