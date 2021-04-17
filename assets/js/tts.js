@@ -30,7 +30,7 @@ var audioPlayingArray = []
 
 $(document).on('click', '.speakClass', function(e) {
 
-    var endpoint = `http://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=` + $(this).attr('name')
+    var endpoint = `https://api.voicerss.org/?key=dbee783ed6874c4c8d0ec1fe81c18292&hl=en-us&src=` + $(this).attr('name')
 
     fetchAudio(endpoint)
     .then((response) => {
