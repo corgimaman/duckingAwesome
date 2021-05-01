@@ -40,7 +40,7 @@ Once the API calls are complete, press whichever button you want read out loud b
 ### Team
 Letter | Name
 ------------ | -------------
-E | Erick Flores
-I | Ida Shalilian
-J | Jesse Ceniceros
-K | Kevin Henley
+A | Erick Flores
+B | Ida Shalilian
+C | Jesse Ceniceros
+D | Kevin Henley
