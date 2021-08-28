@@ -28,7 +28,7 @@ Upon first accessing the website you get a warning modal that can be dismissed u
 ![Buttons](./assets/images/demo.png)
 Once the API calls are complete, press whichever button you want read out loud by the talk to speech! You can press as many buttons as you want, as often as you want. All swear words should be filtered out for profanity. Press the stop button to stop the audio. Twenty random buttons are generated each time, so refresh the page to get twenty new ones. Pressing reset will clear out the local storage (delete the names from the input boxes) and refresh the page.
 
-[Come play with it here!](https://corgimaman.github.io/groupProject/)
+[Come play with it here!](https://corgimaman.github.io/duckingAwesome/)
 
 ### Future Developments
 - Let user choose language
